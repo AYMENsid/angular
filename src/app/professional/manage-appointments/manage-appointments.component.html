@@ -1,0 +1,19 @@
+<div *ngFor="let appointment of appointments" class="card mt-3" style="background-color: #f0f8ff;">
+  <div class="card-body">
+    <p><strong>Client : </strong>{{appointment.client}}</p>
+    <p><strong>Date : </strong>{{appointment.date}}</p>
+    <p><strong>Status : </strong>{{appointment.status}}</p>
+
+    <button *ngIf="appointment.status === 'En attente'" 
+            (click)="confirmAppointment(appointment.id)" 
+            class="btn btn-success mt-2">
+      Confirmer
+    </button>
+
+    <button 
+            (click)="cancelAppointment(appointment.id)" 
+            class="btn btn-danger mt-2">
+      Annuler
+    </button>
+  </div>
+</div>

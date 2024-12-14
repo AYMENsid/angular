@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2>Réservez un rendez-vous</h2>
+  
+    <form (ngSubmit)="bookAppointment()">
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" id="date" class="form-control" [(ngModel)]="date" name="date" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="professional" class="form-label">Professionnel</label>
+        <select id="professional" class="form-control" [(ngModel)]="selectedProfessional" name="professional" required>
+          <option *ngFor="let prof of professionals" [value]="prof">{{prof}}</option>
+        </select>
+        <p *ngIf="professionals.length === 0">Aucun professionnel disponible</p>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-2">Réserver</button>
+    </form>
+  </div>
+  
