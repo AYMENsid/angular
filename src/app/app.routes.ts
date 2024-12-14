@@ -6,6 +6,7 @@ import { ManageAppointmentsComponent } from './professional/manage-appointments/
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
   { path: 'signup', component: SignupComponent },
   { path: 'book-appointment', component: BookAppointmentComponent },
   { path: 'manage-appointments', component: ManageAppointmentsComponent }

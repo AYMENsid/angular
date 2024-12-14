@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; // Importez CommonModule
 
 @Component({
   selector: 'app-manage-appointments',
   standalone: true,
   templateUrl: './manage-appointments.component.html',
-  imports: [CommonModule]  // Import nécessaire pour *ngFor et autres directives
+  styleUrls: ['./manage-appointments.component.css'],
+  imports: [CommonModule] // Ajoutez CommonModule ici
 })
 export class ManageAppointmentsComponent {
   appointments = [
-    { id: 1, client: 'Jean Dupont', date: '2023-12-10', status: 'En attente' },
-    { id: 2, client: 'Marie Durand', date: '2023-12-11', status: 'En attente' }
+    { id: 1, client: 'Jean Dupont', date: '2024-06-14', status: 'En attente' },
+    { id: 2, client: 'Marie Curie', date: '2024-06-15', status: 'Confirmé' }
   ];
-
-  constructor(private router: Router) {}
 
   confirmAppointment(id: number) {
     const appointment = this.appointments.find(a => a.id === id);

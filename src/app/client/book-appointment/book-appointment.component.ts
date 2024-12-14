@@ -22,3 +22,6 @@ export class BookAppointmentComponent {
     this.router.navigate(['/']);
   }
 }
+export class ManageAppointmentsComponent {
+  // contenu du composant
+}
