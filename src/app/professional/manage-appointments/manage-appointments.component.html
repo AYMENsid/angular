@@ -1,24 +1,47 @@
+<!-- src/app/appointment/appointments.component.html -->
 <div class="container mt-5">
-  <h2>Gérer les Rendez-vous</h2>
+  <h2 class="mb-4 text-primary text-center">Gérer les Rendez-vous</h2>
+
+  <!-- Message lorsqu'il n'y a aucun rendez-vous -->
   <div *ngIf="appointments.length === 0" class="alert alert-info mt-3">
     Aucun rendez-vous à afficher.
   </div>
-  <div *ngFor="let appointment of appointments" class="card mt-3">
+
+  <!-- Affichage des rendez-vous -->
+  <div *ngFor="let appointment of appointments" class="card mt-3 shadow-sm rounded">
     <div class="card-body">
-      <p><strong>Client :</strong> {{ appointment.client }}</p>
+      <h5 class="card-title text-dark">Client : {{ appointment.client }}</h5>
       <p><strong>Date :</strong> {{ appointment.date }}</p>
-      <p><strong>Status :</strong> {{ appointment.status }}</p>
+      <p><strong>Status :</strong> 
+        <span 
+          class="badge"
+          [ngClass]="{
+            'bg-warning text-dark': appointment.status === 'En attente',
+            'bg-success': appointment.status === 'Confirmé',
+            'bg-danger': appointment.status === 'Annulé'
+          }">
+          {{ appointment.status }}
+        </span>
+      </p>
 
-      <button *ngIf="appointment.status === 'En attente'" 
-              (click)="confirmAppointment(appointment.id)" 
-              class="btn btn-success mt-2">
-        Confirmer
-      </button>
+      <div class="d-flex justify-content-start mt-2">
+        <!-- Bouton pour confirmer le rendez-vous -->
+        <button 
+          *ngIf="appointment.status === 'En attente'" 
+          (click)="confirmAppointment(appointment.id)" 
+          class="btn btn-outline-success me-2">
+          Confirmer
+        </button>
 
-      <button (click)="cancelAppointment(appointment.id)" 
-              class="btn btn-danger mt-2">
-        Annuler
-      </button>
+        <!-- Bouton pour annuler le rendez-vous -->
+        <button 
+          (click)="cancelAppointment(appointment.id)" 
+          class="btn btn-outline-danger">
+          Annuler
+        </button>
+      </div>
+
     </div>
   </div>
+
 </div>

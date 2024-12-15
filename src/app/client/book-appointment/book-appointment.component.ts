@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class BookAppointmentComponent {
   date: string = '';
   selectedProfessional: string = '';
-  professionals = ['Dzda', 'hda', 'ahmed'];
+  professionals = ['Ouali', 'Bouroubii', 'Abdeli'];
 
   constructor(private router: Router) {}
 

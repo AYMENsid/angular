@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common'; // Importez CommonModule
 })
 export class ManageAppointmentsComponent {
   appointments = [
-    { id: 1, client: 'Jean Dupont', date: '2024-06-14', status: 'En attente' },
-    { id: 2, client: 'Marie Curie', date: '2024-06-15', status: 'Confirmé' }
+    { id: 1, client: 'ahmed', date: '2024-06-14', status: 'En attente' },
+    { id: 2, client: 'samir', date: '2024-06-15', status: 'En attente' }
   ];
 
   confirmAppointment(id: number) {

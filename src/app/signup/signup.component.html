@@ -1,26 +1,39 @@
 <!-- src/app/signup/signup.component.html -->
-<div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card p-4">
-          <h2 class="text-center mb-4">Signup</h2>
-          <form>
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" id="username" class="form-control" placeholder="Enter your username">
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" class="form-control" placeholder="Enter your email">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" id="password" class="form-control" placeholder="Enter your password">
-            </div>
-            <button type="submit" class="btn btn-success w-100 mt-2">Signup</button>
-          </form>
-        </div>
+<div class="container d-flex align-items-center justify-content-center vh-100">
+  <div class="card shadow-lg p-5" style="width: 100%; max-width: 400px;">
+    <h2 class="text-center mb-4 text-success">Create Account</h2>
+    <form>
+      <div class="form-floating mb-3">
+        <input 
+          type="text" 
+          id="username" 
+          class="form-control" 
+          placeholder="Enter your username" 
+          required>
+        <label for="username">Username</label>
       </div>
-    </div>
+      <div class="form-floating mb-3">
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control" 
+          placeholder="name@example.com" 
+          required>
+        <label for="email">Email Address</label>
+      </div>
+      <div class="form-floating mb-4">
+        <input 
+          type="password" 
+          id="password" 
+          class="form-control" 
+          placeholder="Password" 
+          required>
+        <label for="password">Password</label>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Sign Up</button>
+      <div class="text-center mt-3">
+        <p class="small">Already have an account? <a href="#" class="text-decoration-none">Login here</a>.</p>
+      </div>
+    </form>
   </div>
-  
+</div>

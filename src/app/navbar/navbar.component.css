@@ -1,0 +1,9 @@
+.custom-navbar {
+    background-color: #ff0000; /* Rouge personnalisé */
+  }
+  
+  .custom-navbar .nav-link,
+  .custom-navbar .navbar-brand {
+    color: white !important;
+  }
+  
